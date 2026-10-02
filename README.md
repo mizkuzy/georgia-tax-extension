@@ -4,8 +4,13 @@
 
 ## Установка
 
-1. `chrome://extensions` → включить «Режим разработчика».
-2. «Загрузить распакованное» → папка `extension`.
+1. Скачать проект:
+   ```bash
+   git clone https://github.com/mizkuzy/georgia-tax-extension.git
+   ```
+   Или без git: на GitHub «Code» → «Download ZIP» и распаковать.
+2. `chrome://extensions` → включить «Режим разработчика».
+3. «Загрузить распакованное» → папка `extension`.
 
 ## Как пользоваться
 
