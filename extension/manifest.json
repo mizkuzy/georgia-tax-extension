@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Georgia tax declaration",
+  "version": "0.1",
+  "description": "Fills fields 15 and 20 of the monthly small business declaration on rs.ge.",
+  "action": { "default_title": "Georgia tax declaration" },
+  "side_panel": { "default_path": "panel.html" },
+  "background": { "service_worker": "background.js" },
+  "permissions": ["sidePanel", "scripting"],
+  "host_permissions": [
+    "https://eservices.rs.ge/*",
+    "https://decl.rs.ge/*",
+    "https://nbg.gov.ge/*"
+  ]
+}

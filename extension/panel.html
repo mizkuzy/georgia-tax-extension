@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Georgia tax declaration</title>
+<style>
+  body { font: 14px system-ui, sans-serif; margin: 12px; color: #222; background: #fff; }
+  section { margin-bottom: 14px; }
+  label { display: block; margin: 8px 0 2px; }
+  input { font: inherit; padding: 4px 6px; width: 100%; box-sizing: border-box; }
+  button { font: inherit; padding: 6px 12px; margin-top: 8px; cursor: pointer; }
+  button:disabled { cursor: default; }
+  .muted { color: #666; }
+  #log { white-space: pre-wrap; background: #f4f4f4; padding: 8px; border-radius: 4px; }
+  #log:empty { display: none; }
+  #log .err { color: #b00020; }
+  #log .ok { color: #1b6e20; }
+  #past { display: none; background: #fff6d6; padding: 8px; border-radius: 4px; }
+  #pastRows { width: 100%; border-collapse: collapse; margin-top: 8px; }
+  #pastRows td { padding: 2px 4px 2px 0; }
+  #pastRows td:first-child { white-space: nowrap; }
+  #confirmText { white-space: pre-wrap; }
+  #confirm { display: none; background: #fff6d6; padding: 8px; border-radius: 4px; }
+</style>
+</head>
+<body>
+  <section>
+    <div>История доходов: <b id="folder">не выбрана</b></div>
+    <button id="pickFolder">Выбрать папку</button>
+  </section>
+
+  <section>
+    <div id="pageStatus" class="muted">Проверка страницы RS…</div>
+    <button id="recheck">Проверить снова</button>
+    <div id="hint" hidden>Заполните дату получения дохода и сумму, а затем нажмите кнопку «Заполнить декларацию».</div>
+  </section>
+
+  <section id="inputs" hidden>
+    <label for="date">Дата получения дохода</label>
+    <input id="date" type="date">
+    <label for="usd">Сумма, USD (0 — нет дохода)</label>
+    <input id="usd" inputmode="decimal" placeholder="например 6100,55">
+    <button id="fill" disabled>Заполнить декларацию</button>
+  </section>
+
+  <section id="past">
+    <div id="pastTitle"></div>
+    <table id="pastRows"></table>
+    <button id="pastSave">Сохранить и продолжить</button>
+    <button id="pastCancel">Отмена</button>
+  </section>
+
+  <section id="confirm">
+    <div id="confirmText"></div>
+    <button id="yes">Да</button>
+    <button id="no">Нет</button>
+  </section>
+
+  <section>
+    <div id="log"></div>
+  </section>
+
+  <script type="module" src="panel.js"></script>
+</body>
+</html>
